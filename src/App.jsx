@@ -53,10 +53,11 @@ function getMemberStyle(name) {
 
   if (!config) return null;
 
+  const fullPath = `${import.meta.env.BASE_URL}${config.backgroundImage.replace(/^\//, '')}`;
   return {
     backgroundImage: `
       linear-gradient(90deg, rgba(247, 249, 252, 0) 10%, #f7f9fc 60%),
-      url("${config.backgroundImage}")
+      url("${fullPath}")
     `,
     backgroundRepeat: 'no-repeat',
     backgroundPosition: 'left 12px center',
@@ -76,6 +77,19 @@ export default function App() {
     }))
   );
   const memberControlRef = useRef(null);
+  useEffect(() => {
+    const preloadImages = () => {
+      Object.values(SPECIAL_MEMBERS).forEach((member) => {
+        if (member.backgroundImage) {
+          const img = new Image();
+          const fullPath = `${import.meta.env.BASE_URL}${member.backgroundImage.replace(/^\//, '')}`;
+          img.src = fullPath;
+        }
+      });
+    };
+
+    preloadImages();
+  }, []);
   useEffect(() => {
     memberControlRef.current?.scrollIntoView({
       behavior: 'smooth',
@@ -230,6 +244,7 @@ export default function App() {
             const inputStyle = {
               flex: 1,
               height: 40,
+              width: '100%',
               borderRadius: 12,
               backgroundColor: hasConfig ? 'rgba(255, 255, 255, 0.5)' : '#fff',
               // backdropFilter: hasConfig ? 'blur(2px)' : 'none',
@@ -260,7 +275,7 @@ export default function App() {
               />
 
               {/* 小时数 */}
-              <div style={{ display: 'flex', alignItems: 'center', gap: 6, position: 'relative' }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: 6, position: 'relative', flexShrink: 0 }}>
                 <InputNumber
                   min={0}
                   value={m.hours}
@@ -269,7 +284,7 @@ export default function App() {
                   style={{
                     height: 40,
                     borderRadius: 12,
-                    width: 100,
+                    width: 'clamp(50px, 18vw, 90px)',
                     textAlign: 'center'
                   }}
                   onChange={(v) =>

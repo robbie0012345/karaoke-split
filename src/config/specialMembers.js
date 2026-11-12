@@ -19,6 +19,10 @@ export const SPECIAL_MEMBERS = {
     backgroundImage: '/memberBG/芋泥猫头.jpg',
   },
 
+  抹茶猫头: {
+    backgroundImage: '/memberBG/抹茶猫头.jpg',
+  },
+
   aka: {
     backgroundImage: '/memberBG/aka.jpg'
   },
@@ -145,5 +149,49 @@ export const SPECIAL_MEMBERS = {
 
   叉依姬: {
     backgroundImage: '/memberBG/nico.jpg',
-  }
+  },
+
+  charlie: {
+    backgroundImage: '/memberBG/charlie.jpg',
+  },
+
+  查理: {
+    backgroundImage: '/memberBG/charlie.jpg',
+  },
+
+  シロ: {
+    backgroundImage: '/memberBG/シロ.jpg',
+  },
+
+  希罗: {
+    backgroundImage: '/memberBG/シロ.jpg',
+  },
+
+  dearfranklin: {
+    backgroundImage: '/memberBG/DearFranklin.jpg',
+  },
+
+  李刚: {
+    backgroundImage: '/memberBG/DearFranklin.jpg',
+  },
+
+  半人前冒险家: {
+    backgroundImage: '/memberBG/半人前冒险家.jpg',
+  },
+
+  冒险家: {
+    backgroundImage: '/memberBG/半人前冒险家.jpg',
+  },
+
+  七贼: {
+    backgroundImage: '/memberBG/七贼.jpg',
+  },
+
+  7: {
+    backgroundImage: '/memberBG/七贼.jpg',
+  },
+
+  gin: {
+    backgroundImage: '/memberBG/七贼.jpg',
+  },
 };
