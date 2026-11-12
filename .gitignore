@@ -12,6 +12,9 @@ dist
 dist-ssr
 *.local
 
+# 头像原图（第三方素材，只在本机处理后入库）
+raw-avatars/*
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json

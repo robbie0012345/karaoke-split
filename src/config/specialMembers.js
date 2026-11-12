@@ -1,4 +1,7 @@
-export const SPECIAL_MEMBERS = {
+import { GENERATED_MEMBERS } from './generatedMembers.js';
+
+// 手写别名表：一个头像对应多个叫法。这里优先级高于脚本自动生成的结果。
+const MANUAL_MEMBERS = {
   芋泥猫头: {
     backgroundImage: '/memberBG/芋泥猫头.jpg',
   },
@@ -39,6 +42,10 @@ export const SPECIAL_MEMBERS = {
     backgroundImage: '/memberBG/akashii.jpg'
   },
 
+  比那名居叶: {
+    backgroundImage: '/memberBG/akashii.jpg'
+  },
+
   usamimaribel: {
     backgroundImage: '/memberBG/UsamiMaribel.jpg',
   },
@@ -67,11 +74,11 @@ export const SPECIAL_MEMBERS = {
     backgroundImage: '/memberBG/James.jpg',
   },
 
-  詹姆斯: {
+  水: {
     backgroundImage: '/memberBG/James.jpg',
   },
 
-  詹姆丝儿: {
+  詹姆斯: {
     backgroundImage: '/memberBG/James.jpg',
   },
 
@@ -100,6 +107,14 @@ export const SPECIAL_MEMBERS = {
   },
 
   睡: {
+    backgroundImage: '/memberBG/睡睡.jpg',
+  },
+
+  雷普小朋友: {
+    backgroundImage: '/memberBG/睡睡.jpg',
+  },
+
+  猫顺条: {
     backgroundImage: '/memberBG/睡睡.jpg',
   },
 
@@ -187,11 +202,18 @@ export const SPECIAL_MEMBERS = {
     backgroundImage: '/memberBG/七贼.jpg',
   },
 
-  7: {
+  七: {
     backgroundImage: '/memberBG/七贼.jpg',
   },
 
   gin: {
     backgroundImage: '/memberBG/七贼.jpg',
   },
+};
+
+export { MANUAL_MEMBERS };
+
+export const SPECIAL_MEMBERS = {
+  ...GENERATED_MEMBERS,
+  ...MANUAL_MEMBERS,
 };
